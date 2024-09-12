@@ -1,0 +1,18 @@
+¿Qué es XZ Utils?
+XZ Utils es casi omnipresente en Linux. Proporciona compresión de datos sin pérdidas en prácticamente todos los sistemas operativos 
+tipo Unix, incluido Linux. XZ Utils proporciona funciones críticas para comprimir y descomprimir datos durante todo tipo de operaciones. 
+XZ Utils también es compatible con el formato .lzma heredado, lo que hace que este componente sea aún más crucial.
+
+¿Qué ocurrió?
+Andres Freund, un desarrollador e ingeniero que trabaja en las ofertas de PostgreSQL de Microsoft, estaba recientemente solucionando 
+problemas de rendimiento que experimentaba un sistema Debian con SSH, el protocolo más utilizado para iniciar sesión de forma remota 
+en dispositivos a través de Internet. Específicamente, los inicios de sesión de SSH estaban consumiendo demasiados ciclos de CPU y 
+generaban errores con valgrind, una utilidad para monitorear la memoria de la computadora.
+
+Por pura suerte y el ojo cuidadoso de Freund, eventualmente descubrió que los problemas eran el resultado de actualizaciones que se 
+habían realizado en XZ Utils. El viernes, Freund se dirigió a la Lista de Seguridad de Código Abierto para revelar que las actualizaciones 
+eran el resultado de alguien que colocaba intencionalmente una puerta trasera en el software de compresión.
+
+Es difícil exagerar la complejidad de la ingeniería social y el funcionamiento interno de la puerta trasera. Thomas Roccia, un investigador 
+de Microsoft, publicó un gráfico en Mastodon que ayuda a visualizar la extensión casi exitosa del esfuerzo para propagar una puerta 
+trasera con un alcance que habría superado el evento de SolarWinds de 2020.
